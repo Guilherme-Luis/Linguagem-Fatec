@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 05 - 03 - 21</title>
+        <style>
+        </style>
+
+        <script>
+            'use scrict'
+            let a,b,c;
+        a = parseFloat(prompt("Por Favor Entrar com o 1°Numero: "));
+        b = parseFloat(prompt("Por Favor Entrar com o 2°Numero: "));
+        c = prompt("Por Favor Entrar com o Operador da Formula: ");
+        if (isNaN(a) || isNaN(b)){
+            alert("O Valor Numérico está errado");
+        } else {
+            switch(c){
+                case '+':
+                    document.write(`${a} + ${b} é igual a ${a + b}`);
+                    break //break interrompe a execução do SWITCH
+                case '-':
+                    document.write(`${a} - ${b} é igual a ${a - b}`);
+                    break
+                case '*':
+                case 'X':
+                case 'x':
+                    document.write(`${a} * ${b} é igual a ${a * b}`);
+                    break
+                case "/":
+                case ":":
+                    document.write(`${a} / ${b} é igual a ${a / b}`);
+                    break
+                default:
+                    alert("Erro do valor");
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        <h1>Aula 05 - 03 - 21</h1>
+
+    </body>
+</html>

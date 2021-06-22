@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de saudação</title>
+    <style>
+        div, fieldset{
+            margin-bottom: 20px;
+            
+        }
+        #Saudacao{
+            background-color: aliceblue;
+            padding: 10px;
+        }
+        div label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de saudação</h1>
+    <div>
+        <label for="Nome">Primeiro Nome</label>
+        <input id="Nome" type="text">
+    </div>
+    <div>
+        <label for="Sobrenome">Sobrenome</label>
+        <input id="Sobrenome" type="text">
+    </div>
+    <div>
+        <label for="Tratamento">Forma de Tratamento</label>
+        <select  id="Tratamento">
+            <option>(Selecione)</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentíssimo</option>
+            <option>Ilustríssimo</option>
+            <option>Vossa Senhoria</option>
+            <option>Senhor(a)</option>
+            <option>Cremosíssimo</option>
+        </select>
+    </div>
+    <fieldset>
+        <legend>Sexo</legend>
+        <input id="Masculino" type="radio" name="Sexo" checked>
+        <label for="Masculino">Masculino</label>
+        <br>
+        <input id="Feminino" type="radio" name="Sexo">
+        <label for="Feminino">Feminino</label>
+    </fieldset>
+    <div>
+        <label for="Hora">Hora do Dia</label>
+        <input id="Hora" type="number" min="0" max="23">
+    </div>
+    <fieldset>
+        <legend>Opções de Exibição</legend>
+        <input id="Alert" type="checkbox">
+        <label for="Alert">Exibir com Alerta()</label>
+        <br>
+        <input id="Document" type="checkbox">
+        <label for="Document">Exibir no Documento</label>
+    </fieldset>
+    <div id="Saudacao">
+
+    </div>
+    <div>
+        <button id="Enviar">Enviar</button>
+    </div>
+    <script>
+        const Nome = document.getElementById("Nome");
+        const Sobrenome = document.getElementById("Sobrenome");
+        const Tratamento = document.getElementById("Tratamento");
+        const Masculino = document.getElementById("Masculino");
+        const Feminino = document.getElementById("Feminino");
+        const Hora = document.getElementById("Hora");
+        const Alert = document.getElementById("Alert");
+        const Document = document.getElementById("Document");
+        const Saudacao = document.getElementById("Saudacao");
+        const Enviar = document.getElementById("Enviar");
+
+        function Validacao(){
+            if (Nome.value === ""){
+                alert("O Nome deve ser preenchido");
+                Nome.focus();
+                return false;
+            }
+            if(Sobrenome.value === ""){
+                alert("O Sobrenome deve ser preenchido");
+                Sobrenome.focus();
+                return false;
+            }
+            if(Tratamento.selectedIndex === 0){
+                alert("Olhe uma forma de tratamento");
+                Tratamento.focus();
+                return false;
+            }
+            if(isNaN(Hora.value) || Hora.value < 0 || Hora.value > 23){
+                alert("A Hora do Dia está incorreta");
+                Hora.focus();
+                return false;
+            }
+            if((Alert.checked === false) && (Document.checked === false)){
+                alert("Não foi selecionado nenhuma exibição");
+                Alert.focus();
+                return false
+            }
+            return true
+        }
+        function Exibir(){
+            if(Validacao()){
+                let Mensagem = ""
+                if(Hora.value < 12){
+                    Mensagem = "Bom Dia, "
+                }else if(Hora.value < 18){
+                    Mensagem = "Boa Tarde, "
+                }else{
+                    Mensagem = "Boa Noite, "
+                }
+                switch (Tratamento.selectedIndex){
+                    case 1:
+                        Mensagem += "Vossa Majestade "
+                    break
+                    case 2:
+                        Mensagem += "Excelentíssimo "
+                    break
+                    case 3:
+                        if(Masculino.checked){
+                            Mensagem +=  "Ilustríssimo "
+                        } else if(Feminino.checked){
+                            Mensagem += "Ilustríssima "
+                        }
+                    break
+                    case 4:
+                        if(Masculino.checked){
+                            Mensagem +=  "Vosso Senhor "
+                        } else if(Feminino.checked){
+                            Mensagem += "Vossa Senhoria "
+                        }
+                    break
+                    case 5:
+                        if(Masculino.checked){
+                            Mensagem +=  "Senhor "
+                        } else if(Feminino.checked){
+                            Mensagem += "Senhora "
+                        }
+                    break
+                    default:
+                        if(Masculino.checked){
+                            Mensagem +=  "Cremosíssimo "
+                        } else if(Feminino.checked){
+                            Mensagem += "Cremosíssima "
+                        }
+                }
+                Mensagem += Nome.value + " "
+                Mensagem += Sobrenome.value + "! Como posso ser útil? "
+                if(Alert.checked){
+                    alert(Mensagem);
+                }
+                if(Document.checked){
+                    Saudacao.innerHTML = (Mensagem);
+                }
+            }
+        }
+        Enviar.addEventListener("click", Exibir);
+
+    </script>
+</body>
+</html>

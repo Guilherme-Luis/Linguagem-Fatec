@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+*{
+    top: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro';
+    background-color: #00538F;
+}
+.Corpo{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.Cabecalho{
+    text-align: center;
+    margin-top: 30px;
+}
+.Descricao{
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+img{
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px  rgb(53, 52, 52);
+}
+.Citacao{
+    text-align: end;
+}
+h2, h1{
+    color: #008FF5;
+}
+.Paragrafo1{
+    padding-top: 30px;
+}
+.Paragrafo2{
+    padding-bottom: 30px;
+}
+ol, ul{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+hr{
+    border-color: #003D69;
+}
+a{
+    color: black;
+}
+

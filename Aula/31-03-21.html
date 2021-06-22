@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>DOM - Document Object Model</title>
+        </head>
+        <body>
+            <h1>Document Object Model</h1>
+            <p>O <em>Document Object Model</em>(Modelo de Objetos do Documento) é a estrutura da página HTML, tal como vista pelo JavaScript.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <script>
+                /*
+                Quando vamos manipular o DOM (os elementos da página HTML) via JS, a seção
+                <script> precisa ser realocada para logo antes da tag </body>.
+                */
+                // Ativa verificações adicionais de variáveis
+                // Modo "chato" do JavaScript
+                'use strict'
+                
+                
+                
+                /* Mudar o texto do elemento H1 */
+                
+                // 1) Capturar o elemento HTML
+                const elementoH1 = document.querySelector('h1');
+                elementoH1.textContent = 'Novo Título da Página'
+
+                // 2) Mudando algumas características do documento.
+                elementoH1.textContent = 'Novo Título da Página'
+                elementoH1.style.color = 'blue'
+
+                // Mudar algumas características do parágrafo <p>
+                const elementoP = document.querySelector('p');
+
+                elementoP.style.center = 'center'
+                elementoP.style.fontWeight = 'bold'
+                
+                // Mudar uma característica do <li>
+                const elementoLI = document.querySelector('li');
+                elementoLI.style.backgroundColor = 'yellow'
+                elementoLI.style.fontStyle = 'italic'
+                /* document.querySelectorAll('nometag') irá capturar TODOS
+                os elementos do tipo 'nometag' e colocá-los dentro de um
+                vetor. O primeiro elemento do vetor tem índice 0. */
+                const todosLi = document.querySelectorAll('li')
+                todosLi[0].style.color = 'red'
+                todosLi[1].style.color = 'green'
+                todosLi[2].style.color = 'orange'
+                todosLi[6].style.textDecoration = 'underline'
+                /* Capturando um elemento por id. Existem duas formas */
+                // Forma 1 (mais anitiga)
+                const itemArgentina = document.getElementById('arg')
+                
+            </script>
+        </body>
+    </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Modelo</title>
+        <style>
+        </style>
+
+        <script>
+            'use scrict'
+            let soma=0, num;
+            // Pedir ao usuário que informe vários números na sequência e vamos somar
+            // até que ele informe o valor 0. Depois disso, vamos apresentar a soma.
+            do{
+                num = Number(prompt("Informe um número para somar ou 0 para terminar: "));
+                if(! isNaN(num)){ // se for um numero válido
+                    soma += num // Equivale a: soma = soma + num
+                }
+            } while(num !== 0){
+                alert(`A soma dos números é ${soma}.`);
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

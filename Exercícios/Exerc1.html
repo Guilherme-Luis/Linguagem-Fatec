@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Exercício N:1</title>
+        <meta charset="utf-8"/>
+
+
+        <script>
+            function calculo(){
+                let Anos, Meses, Dias, Semanas
+                var Nasc = document.getElementById("Nascimento").value;
+                var Atual = document.getElementById("Atual").value;
+                Anos = (Atual - Nasc)
+                Meses = (Anos * 12)
+                Dias = (Meses * 30)
+                Semanas = (Dias / 7)
+                //document.getElementById("resultado").innerHTML = `O IMC é${​Anos}​​
+                //${​​Meses}​​ ${​​Dias} &&​​ ${​​Semanas.toFixed(2)}`;
+                document.getElementById("resultado").innerHTML = 
+                "<p>A Idade em Anos é: " + Anos + "</p>" +
+                "<p>A Idade em Meses é: " + Meses + "</p>" + 
+                "<p>A Idade em Dias é: " + Dias + "</p>" + 
+                "<p>A Idade em Semanas é: " + Semanas.toFixed(2) + "</p>"
+            }
+        </script>
+
+    </header>
+    <body>
+        <p>
+            Ano de Nascimento:<br/>
+            <input type="number" id="Nascimento"/>
+        </p>
+        <p>
+            Ano Atual:<br/>
+            <input type="number" id="Atual"/>
+        </p>
+        <p>
+            <button type="button" onclick="calculo()">Calcular</button>
+        </p>
+        <p id="resultado">
+
+        </p>
+    </body>
+</html>

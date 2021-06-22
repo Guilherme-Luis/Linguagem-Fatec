@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Modelo</title>
+        <style>
+        </style>
+
+        <script>
+            'use scrict'
+            let fat5 = 1;
+            for(let i = 5; i > 1; i--){
+                fat5 = (fat5 * i)
+            }
+            alert(`O Fatorial de 5 é: ${fat5}`);
+
+            let fat4 = 1;
+            for(let i = 4; i > 1; i--){
+                fat4 = (fat4 * i)
+            }
+            alert(`O Fatorial de 4 é: ${fat4}`);
+
+            function fatorial(Num){
+                let fat = 1;
+                for(let i = Num; i > 1; i--){
+                    fat *= i
+                }
+                return fat
+            }
+            let x = fatorial(5);
+            let y = fatorial(4);
+            alert(`O Fatorial de 5 calculado pela função é: ${x}`);
+            alert(`O Fatorial de 4 calculado pela função é: ${y}`);
+
+            function calcArea(base, altura, forma){
+                let area;
+                switch (forma){
+                    case "Q":
+                        area = (base * altura)
+                    break
+                    case "T":
+                        area = (base * (altura / 2));
+                    break
+                    case "E":
+                        area = (base / 2) * (altura / 2) * Math.PI
+                    break
+                    default:
+                        area = NaN
+                }
+                return area   
+            }
+            let areaTerreno = calcArea(8, 25, "Q");
+            alert(`A Área do terreno é: ${areaTerreno}`);
+            alert(`A Área do triângulo é: ${calcArea(7, 5, "T")}`);
+            alert(`A Área da Elipse é: ${calcArea(2, 3, "E")}`);
+            alert(`A Área de uma forma não suportada: ${calcArea(5, 7, "W")}`);
+
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

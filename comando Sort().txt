@@ -1,0 +1,1 @@
+vetor.sort();   <------ Organiza os elementos do vetor em ordem alfabética.

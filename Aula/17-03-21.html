@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Modelo</title>
+        <style>
+        </style>
+
+        <script>
+            let N,C, Pe, Po;
+            do{
+                N = parseInt(prompt("Informe o segundo dígito numérico de 0 ate 9: "));
+            } while(N < 0 || N > 9 || isNaN(N))
+            for(let C = 1; C <= N; C++){
+                if (C % 31 == 0){
+                    Pe = C
+                    document.write(`A Medida do Pedágio é: ${Pe} <br>`);
+                }
+                if (C % 23 == 0){
+                    Po = C
+                    document.write(`A Medida do posto de atendimento é: ${Po} <br>`);
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que vari�veis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar vari�veis diretamente � m� pr�tica de
+        // programa��o
+        'use strict'
+        
+        /*
+            O ano � 2119. A prefeita Enza Valentina Faleiros Trajano 
+            Bittar da Silva inaugura a primeira linha do Metr� de Franca, 
+            no sentido norte-sul, com as seguintes esta��es: Santa Teresinha,
+            Esta��o, Centro, Jardim Lima e Aeroporto I.
+            
+            1) Crie um vetor vazio e depois insira as esta��es no
+                vetor. Fa�a um loop for TRADICIONAL para exibir as 
+                esta��es e depois passe um tra�o horizontal (<hr>).
+                
+            No ano seguinte, a linha foi expandida com a inaugura��o
+            das esta��es City Petr�polis, no extremo norte, e Aeroporto
+            IV, no extremo sul.
+            
+            2) Insira as novas esta��es no vetor nas posi��es apropriadas.
+                Fa�a um loop FOR..OF para exibir as esta��es e depois
+                passe um tra�o horizontal (<hr>).
+                
+            J� em 2125, foi criada a esta��o Vila Imperador, entre
+            as esta��es Santa Teresinha e Esta��o, para atender � grande
+            demanda da maior universidade da cidade, a Fatec de Franca.
+            Um ano depois, a esta��o Jardim Alvorada passou a funcionar
+            entre as esta��es Jardim Lima e Aeroporto I.
+            
+            3) Insira as novas esta��es no vetor nas posi��es apropriadas.
+                Fa�a um loop for TRADICIONAL EM SENTIDO INVERSO para exibir
+                as esta��es e depois passe um tra�o horizontal (<hr>).
+                
+            Em 2130, a esta��o Centro foi desativada, e em seu lugar duas
+            novas esta��es entraram em funcionamento: as esta��es 9 de Julho
+            e Champagnat.
+            
+            4) Modifique o vetor de acordo com as altera��es.
+                Fa�a um loop for TRADICIONAL para exibir as esta��es e depois
+                passe um tra�o horizontal (<hr>).
+                
+            Em 2133, no entanto, Franca entrou em guerra com os 
+            restinguenses, que invadiram e destru�ram as duas esta��es 
+            mais ao sul do metr� de Franca. Neste mesmo ano, em meio
+            � crise, foi fechada a esta��o Santa Teresinha.
+            
+            5) Modifique o vetor de acordo com as altera��es.
+                Fa�a um loop FOR...OF para exibir as esta��es e depois
+                passe um tra�o horizontal (<hr>).            
+        */
+     let V1 = Array();
+     V1 = ['Santa Teresina', 'Estação', 'Centro', 'Jardim Lima', 'Aeroporto I'];
+     for(let i = 0; i < V1.length; i++){
+        document.write(V1[i] + '<br>');
+     }
+     document.write('<hr>');
+     V1.unshift('City Petrópolis');
+     V1.push('Aeroporto IV');
+     for(let Cont of V1){
+        document.write(Cont + '<br>');
+     }
+     document.write('<hr>');
+     V1.splice(2, 0, 'Vila Imperador');
+     V1.splice(6, 0, 'Jardim da Alvorada');
+     for(let i = V1.length - 1;i >= 0; i-- ){
+        document.write(V1[i] + '<br>');
+     }
+     document.write('<hr>');
+     V1.splice(4, 1, '9 De Julho', 'Champagnat');
+     for(let i = 0; i < V1.length; i++){
+        document.write(V1[i] + '<br>');
+     }
+     document.write('<hr>');
+     V1.pop();
+     V1.pop();
+     V1.splice(1, 1, 'Santa Teresina (Fechado)');
+     for(let Cont of V1){
+        document.write(Cont + '<br>');
+     }
+     document.write('<hr>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

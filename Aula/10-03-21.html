@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Modelo</title>
+        <style>
+        </style>
+
+        <script>
+            'use scrict'
+            //Loops ou estruturas de repetição são recursos que toda linguagem de programação
+            // disponibiliza para que intruções possam ser executadas mais de uma vez.
+
+            // 1) LOOP while
+
+            // Pedir ao usuário que informe vários números na sequência e vamos somar
+            // até que ele informe o valor 0. Depois disso, vamos apresentar a soma.
+            let soma=0, num;
+            while(num !== 0){
+                //Number tem o mesmo efeito que ParseFloat
+                num = Number(prompt("Informe um número para somar ou 0 para terminar: "));
+                if(! isNaN(num)){ // se for um numero válido
+                    soma += num // Equivale a: soma = soma + num
+                }
+            }
+            alert(`A soma dos números é ${soma}.`);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

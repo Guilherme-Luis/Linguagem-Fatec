@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        // Ativa verificações adicionais de variáveis
+        // Modo "chato" do JavaScript
+        'use strict'
+
+        /*
+            1) Declare um objeto pet1 que represente um cão e preencha as
+            seguintes propriedades:
+            - nome
+            - raça
+            - cor
+            - sexo
+            - nome do pai (nome da propriedade com espaços)
+            - nome da mãe (nome da propriedade com espaços)
+        */
+       let pet1 = {
+        nome: 'Caramelo',
+        'raça': 'Vira Lata',
+        cor: 'Amarelo',
+        sexo: 'Masculino',
+        'nome do pai': 'Dogão',
+        'nome da mãe': 'Mariana'
+       }
+       // let pet2 = pet1 //Apenas dá outro nome para o Objeto
+
+       //Duplicar cada uma das propriedades em um novo objeto.
+       //Para isso, podemos usar a chamada "Sintaxe de espalhamento"
+
+       //Vai gerar uma CÓPIA de cada uma das propriedades de pet1 em pet2
+       let pet2 = {...pet1}
+       pet2.nome = 'Amarelo'
+       pet2.sexo = 'Feminino'
+       pet2['nome da mãe'] = 'Jujuba'
+
+       for(let obj1 in pet1){
+            document.write(`${obj1}: ${pet1[obj1]} <br>`);
+       }
+       document.write("-----------------------------------<br>");
+       for(let obj2 in pet2){
+            document.write(`${obj2}: ${pet2[obj2]} <br>`);
+       }
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

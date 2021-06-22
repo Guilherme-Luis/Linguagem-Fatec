@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova N°1</title>
+    <script>
+        let inf;
+        function valor(){
+            for(let i = 400; i >= 1; i--){
+                if(i % 50 === 0){
+                    document.write(`No ${i} km há um ponto de embarque e desembarque. <br>`);
+                }
+            }
+        }
+        do{
+            inf = parseInt(prompt("Por Favor entre com o KM desejado da linha férrea: "));
+        } while (inf < 1 || inf > 400 || isNaN(inf));
+
+        switch(inf) {
+            case 98:
+            case 190:
+            case 283:
+            case 379:
+                alert(`postos de conveniência da Rede Mil Grau no ${inf} km`);
+            break
+            case 155:
+            case 355:
+                alert(`Postos da Polícia Ferroviária no ${inf} km`);
+            break
+            case 137:
+                alert(`Aeroporto Interplanetário de Virapratos no ${inf} km`);
+            break
+            case 204:
+                alert(`Hotel Cacique Internacional 6 estrelas no ${inf} km`);
+            break
+            case 311:
+                alert(`Boleli shopping center no ${inf} km`);
+            break
+            case 356:
+                alert(`Acesso ao Acqua Park Unidade III no ${inf} km`);
+            default:
+                alert(`Não há nada no ${inf} km`);
+        }
+        valor();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+    <div>
+        <label for="N1">Primeiro Numero</label><br>
+        <input id="N1" type="number">
+    </div>
+    <div>
+        <label for="Oper">Operação</label><br>
+        <select id="Oper">
+            <option>(Selecione)</option>
+            <option>Soma(+)</option>
+            <option>Subtração(-)</option>
+            <option>Multiplicação(X)</option>
+            <option>Divisão(/)</option>
+        </select>
+    </div>
+    <div>
+        <label for="N2">Segundo Número</label><br>
+        <input id="N2" type="number">
+    </div>
+    <div>
+        <button id="Calc">Calcular</button>
+    </div>
+    <div id="Result"></div>
+
+
+    <script>
+        //1) Capturar os elementos HTML
+        //2)Declarar a função de validação do formulário
+        //3)Declarar a função que faz o cálculo, de acordo
+        //com a operação escolhida pelo usuário, dentro desta
+        //função, dee ser chamada a função de validação.
+        //4)Associar a função que faz o cálculo ao evento 
+        // "click" do botão.
+        const N1 = document.getElementById("N1");
+        const N2 = document.getElementById("N2");
+        const Oper = document.getElementById("Oper");
+        const Calc = document.getElementById("Calc");
+        const Result = document.getElementById("Result");
+        function Validar(){
+            if(isNaN(N1.value) || N1.value == ""){
+                alert("O Primeiro numero digitado é invalido");
+                N1.focus();
+                return false;
+            }
+            if(isNaN(N2.value) || N2.value == ""){
+                alert("O Segundo numero digitado é invalido");
+                N2.focus();
+                return false;
+            }
+            if(Oper.selectedIndex === 0){
+                alert("Por favor, escolha uma operação");
+                Oper.focus();
+                return false;
+            }
+            return true;
+        }
+        function Calculo(){
+            if(Validar()){
+                if(Oper.selectedIndex === 1){
+                    Result.innerHTML = 
+                    (N1.value + " + " + N2.value + " = " + (parseFloat(N1.value) + parseFloat(N2.value)));
+                }else if(Oper.selectedIndex === 2){
+                    Result.innerHTML =
+                    (N1.value + " - " + N2.value + " = " + (parseFloat(N1.value) - parseFloat(N2.value)));
+                }else if(Oper.selectedIndex === 3){
+                    Result.innerHTML = 
+                    (N1.value + " * " + N2.value + " = " + (parseFloat(N1.value) * parseFloat(N2.value)));
+                }else if(Oper.selectedIndex === 4){
+                    Result.innerHTML = 
+                    (N1.value + " / " + N2.value + " = " + (parseFloat(N1.value) / parseFloat(N2.value)));
+                }
+            }
+        }
+        Calc.addEventListener("click", Calculo);
+        
+    </script>
+</body>
+</html>

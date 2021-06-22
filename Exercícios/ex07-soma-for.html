@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            
+            Peça ao usuário para informar dois números inteiros diferentes.
+            Use do..while para garantir que os números sejam válidos e diferentes
+            entre si.
+            
+            Utilizando um loop for, calcule a somatória de todos os números entre 
+            os dois valores informados (inclusive).            
+        */
+       let N1, N2, Soma = 0;
+        do{
+            N1 = parseInt(prompt("Entre com o 1°Numero: "));
+            N2 = parseInt(prompt("Entre com o 2°Numero: "));
+        } while (N1 == N2 || isNaN(N1 && N2));
+        if (N2 > N1) {
+            for(let i = N1; i <= N2; i++){
+                Soma += i
+            }
+            document.write(`A Soma dos Numeros é ${Soma}`);
+        } else {
+            for(let i = N2; i <= N1; i++){
+                Soma += i
+            }
+            document.write(`A Soma dos Numeros é ${Soma}`);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

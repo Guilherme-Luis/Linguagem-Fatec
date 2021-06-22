@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!--Cabeçalho de uma página HTML 5 -->
+<html> <!--elemento raiz-->
+    <head> <!-- Cabeçalho da página-->
+        <title>Cálculo de IMC</title> <!--Título da Página (Aba do Navegador)-->
+        <meta charset="utf-8"/> <!--Sistema de codificação que aceita cecidilha e acentos-->
+        <script>
+            function calculo(){
+                //vamos recuperar o peso do usuário.
+                //declarar variáveis
+                let peso, altura, IMC //observar que as variáveis não possuem tipo - a tipagem é dinâmica
+                // document.getElementById("peso").value --> é um comando para coletar as informações da
+                // caixa de texto sem precisar do programador colocar o caminho atras do value e pelo GET.
+                peso = document.getElementById("peso").value //recupera o valor da caixa de entrada
+                altura = document.getElementById("altura").value //recupera o valor da caixa de entrada
+                IMC = (peso / (altura ** 2))
+                // innerHTML -> colocar um valor (texto) dentro de um elemento de marcação
+                // toFixed(X) -> Limitar o numero para ter duas casas decimais depois da (,) dependendo do X
+                document.getElementById("resultado").innerHTML = IMC.toFixed(2)
+            }
+        </script>
+    </head>
+    <body> <!--Corpo da Página-->
+        <h1>Calculo do IMC - Índice de Massa Corporal</h1><!--Cabeçalho de Nível 1-->
+        <h2>Informe seu Peso e sua altura </h2><!--Cabeçalho de Nível 2-->
+
+        <!--Caixa de entrada de usuários-->
+        <p> <!--Abertura de Parágrafo-->
+            Peso <input type="number" id="peso"/>
+        </p>
+        <p> <!--Abertura de Parágrafo-->
+            altura <input type="number" id="altura"/>
+        </p>
+        <p> <!--Abertura de Parágrafo-->
+            <button type="button" onclick="calculo()">Calcula</button> <!--Botão que vai gerar um evento-->
+        </p>
+        <p id="resultado"> <!-- Aqui vira o resultado --> <!-- abertura de Parágrafo com identificador -->
+
+        </p>
+    </body>
+
+</html>

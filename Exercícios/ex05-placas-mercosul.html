@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Recentemente, as placas de automóveis no Brasil passaram a usar
+            o chamado "modelo Mercosul".
+
+            Nesse modelo, o segundo dígito numérico do modelo anterior passou
+            a ser representado por uma letra. A conversão é regida pela tabela:
+
+            Dígito         Letra
+               0              A
+               1              B
+               2              C
+               3              D
+               4              E
+               5              F
+               6              G
+               7              H
+               8              I
+               9              J
+            Assim, uma placa tradicional ABC-1234, no formato do padrão Mercosul,
+            ficaria ABC-1C34.
+
+            Peça para o usuário informar um dígito válido entre 0 a 9. Com o loop 
+            do..while, faça a validação, repetindo a solicitação até que a resposta
+            obtida seja válida.
+            
+            Em seguida, usando a estrutura de decisão switch..case, informe ao usuário 
+            a letra correspondente ao dígito informado.
+
+        */
+       let N, L;
+        do{
+            N = parseInt(prompt("Informe o segundo dígito numérico de 0 ate 9: "));
+        } while(N < 0 || N > 9 || isNaN(N))
+        switch(N){
+            case 0:
+                L = ("A");
+            break
+            case 1:
+                L = ("B");
+            break
+            case 2:
+                L = ("C");
+            break
+            case 3:
+                L = ("D");
+            break
+            case 4:
+                L = ("E");
+            break
+            case 5:
+                L = ("F");
+            break
+            case 6:
+                L = ("G");
+            break
+            case 7:
+                L = ("H");
+            break
+            case 8:
+                L = ("I");
+            break
+            case 9:
+                L = ("J");
+            }
+            alert(`O Numero que você digitou equivale á: ${L}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

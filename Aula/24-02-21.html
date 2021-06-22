@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1.0">
+        <title>Modelo</title>
+        <style>
+        </style>
+
+        <script>
+            //Ativa verificações adicionais a variáveis
+            //Modo "chato" do Javascript
+            'use scrict'
+            //parseINT() -> TENTA converter um texto em número, se possível
+            //Caso o texto não contenha um número válido, o resultado será NaN
+            //(Not a Number)
+            let numero = parseInt(prompt("Informe um numero MENOR que 1000: "));
+            alerta();
+            function alerta(){
+                if(isNaN(numero)){ //O Resultado de conversão foi NaN?
+                    alert("Entre por favor com um número válido!");
+                    numero = parseInt(prompt("Informe um numero MENOR que 1000: "));
+                    alerta();
+                } else if(numero < 1000){
+                    alert("Parabéns, você acertou!");
+                } else if(numero == 1000){
+                    alert("Por Favor, utilizar APENAS numeros menores de 1000!");
+                } else {
+                    alert("Infelizmente, você não acertou!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Página Modelo</h1>
+
+    </body>
+</html>
